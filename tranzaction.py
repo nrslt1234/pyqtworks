@@ -1,4 +1,5 @@
 
+from dotenv import dotenv_values
 import os
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -14,7 +15,8 @@ from sqlalchemy.sql import text
 # -----------------------------------------------------------------------------
 # CONFIG
 # -----------------------------------------------------------------------------
-DATABASE_URL = "postgresql+psycopg2://postgres:03092006@localhost:5432/Test"
+CONFIG = dotenv_values(".env")
+DATABASE_URL = CONFIG.get("DATABASE_URl")
 
 engine = create_engine(
     DATABASE_URL,
