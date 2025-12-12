@@ -1,13 +1,12 @@
 import random
 from PyQt6.QtWidgets import QApplication
 from PyQt6 import uic
+
 Form, Windows = uic.loadUiType('untitled.ui')
 win = QApplication([])
 windows = Windows()
 form = Form()
 form.setupUi(windows)
-
-
 
 # cnt = 0
 # def clicker():
@@ -23,7 +22,6 @@ form.setupUi(windows)
 #     cnt = 0
 #     form.button_click.setText(f"{cnt}")
 # form.exitbutton.clicked.connect(exit)
-
 
 
 # def F():
@@ -54,12 +52,10 @@ form.setupUi(windows)
 #                 form.label.setText("У вас ничья")
 
 
-
-
-
 import random
 from PyQt6.QtWidgets import QApplication
 from PyQt6 import uic
+
 Form, Windows = uic.loadUiType('untitled.ui')
 app = QApplication([])
 windows = Windows()
@@ -67,13 +63,13 @@ form = Form()
 form.setupUi(windows)
 
 
-
-
 def our_choices(my_choice):
     comp_choices = ["камень", "ножницы", "бумага"]
     computer_choice = random.choice(comp_choices)
     form.label.setText(f"Вы выбрали: {my_choice}. Компьютер выбрал: {computer_choice}")
     result(my_choice, computer_choice)
+
+
 def winner(my_choice, computer_choice):
     if my_choice == computer_choice:
         return "Ничья!"
@@ -91,18 +87,26 @@ def result(my_choice, computer_choice):
     my_result = winner(my_choice, computer_choice)
     form.label_2.setText(f"Ваш результат: {my_result}")
 
+
 def on_stone_clicked():
     our_choices("камень")
+
+
 form.pushStone.clicked.connect(on_stone_clicked)
+
+
 def on_paper_clicked():
     our_choices("бумага")
+
+
 form.pushPaper.clicked.connect(on_paper_clicked)
+
+
 def on_scissors_clicked():
     our_choices("ножницы")
-form.pushScissors.clicked.connect(on_scissors_clicked)
 
+
+form.pushScissors.clicked.connect(on_scissors_clicked)
 
 windows.show()
 app.exec()
-
-
