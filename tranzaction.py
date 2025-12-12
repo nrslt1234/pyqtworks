@@ -96,6 +96,7 @@ with Session(engine) as session:
 # перевод
 transfer(acc1.id, acc2.id, 150)
 
+# подключение к сессии
 with Session(engine) as session:
     acc1 = session.scalars(select(Account).where(Account.user_id == u1)).first()
     acc2 = session.scalars(select(Account).where(Account.user_id == u2)).first()
