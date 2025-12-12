@@ -110,3 +110,14 @@ form.pushScissors.clicked.connect(on_scissors_clicked)
 
 windows.show()
 app.exec()
+
+
+
+
+
+pass
+pass
+
+
+
+
